@@ -35,4 +35,8 @@ public interface EmployeeMapper {
      */
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
 
+    /**
+     * 根据主键动态修改语句
+     */
+    void update(Employee employee);
 }

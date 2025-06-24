@@ -93,6 +93,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeMapper.insert(employee); //插入员工数据
     }
 
+    /**
+     * 分页查询
+     * @param employeePageQueryDTO
+     * @return
+     */
     @Override
     public PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
         //select * from employee limit 0,10
@@ -106,4 +111,20 @@ public class EmployeeServiceImpl implements EmployeeService {
         return pageResult;
     }
 
+    /**
+     * 启用禁用员工账号
+     * @param status
+     * @param id
+     */
+    @Override
+    public void startOrStop(Integer status, Long id) {
+        // update employee set status = ? where id = ?
+        //但是为了让update更加通用，我们希望把update设置为动态sql
+            Employee employee = new Employee();
+            employee.setId(id);
+            employee.setStatus(status);
+            //因为是动态所以传入一个对象
+            employeeMapper.update(employee);
+
+    }
 }
