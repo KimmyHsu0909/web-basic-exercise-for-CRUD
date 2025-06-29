@@ -13,13 +13,18 @@ spring:
       username: ${sky.datasource.username}
       password: ${sky.datasource.password}
 
-mybatis:
+#mybatis:
   #mapper配置文件
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.sky.entity
-  configuration:
+  #mapper-locations: classpath:mapper/*.xml
+  #type-aliases-package: com.sky.entity
+  #configuration:
     #开启驼峰命名
-    map-underscore-to-camel-case: true
+    #map-underscore-to-camel-case: true
+  redis:
+    host: ${sky.redis.host}
+    port: ${sky.redis.port}
+    database: ${sky.redis.database}
+
 
 logging:
   level:
@@ -37,3 +42,17 @@ sky:
     admin-ttl: 7200000
     # 设置前端传递过来的令牌名称
     admin-token-name: token
+
+  alioss:
+    access-key-id: ${sky.alioss.access-key-id}
+    access-key-secret: ${sky.alioss.access-key-secret}
+    endpoint: ${sky.alioss.endpoint}
+    bucket-name: ${sky.alioss.bucket-name}
+
+mybatis-plus:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.sky.entity
+  #开启驼峰命名法
+  configuration:
+    map-underscore-to-camel-case: true
