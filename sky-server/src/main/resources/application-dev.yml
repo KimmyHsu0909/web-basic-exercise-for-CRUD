@@ -13,6 +13,10 @@ sky:
     access-key-id: LTAI5tR9jQdZW2uzYNyMCXJ6
     bucket-name: my-web0010
 
+  wechat:
+    secret: 4797d33a4f3fc5b9751d4f60352696f1
+    appid: wx5e942b814281724e
+
   redis:
     host: localhost
     port: 6379
